@@ -1,6 +1,6 @@
 import requests
 import time
-
+import os
 
 def s():
     # 获取时间戳
@@ -113,9 +113,14 @@ def bushu(app_token, user_id, bs):
 
 def mainc():
     print("小米运动刷步数同步到微信/支付宝")
-    user = str(input("请输入小米运动手机号："))
-    password = str(input("请输入密码："))
-    bs = str(input("请输入步数："))
+    #user = str(input("请输入小米运动手机号："))
+    #password = str(input("请输入密码："))
+    #bs = str(input("请输入步数："))
+
+    user = os.environ["user"]
+    password = os.environ["password"]
+    bs = os.environ["bs"]
+
 
     
     access = d(user, password)
@@ -130,6 +135,6 @@ def mainc():
 
         bushu(app_token, user_id, bs)
 
-while True:
 
-    mainc()
+
+mainc()
