@@ -1,6 +1,9 @@
+import random
+
 import requests
 import time
 import os
+
 
 def s():
     # 获取时间戳
@@ -111,30 +114,24 @@ def bushu(app_token, user_id, bs):
     print(ss)
 
 
-def mainc():
+def mainc(self,client):
     print("小米运动刷步数同步到微信/支付宝")
-    #user = str(input("请输入小米运动手机号："))
-    #password = str(input("请输入密码："))
-    #bs = str(input("请输入步数："))
+    print("client:" + client)
+    user = client.user
+    password = client.password
+    bs = client.bs
+    bs = random.randint(bs, bs+2000)
 
-    user = os.environ["user"]
-    password = os.environ["password"]
-    bs = os.environ["bs"]
-
-
-    
     access = d(user, password)
     if access == "false":
         print("账号或密码错误")
     else:
-
         cbc = f(access)
-
         app_token = cbc[0]
         user_id = cbc[1]
-
         bushu(app_token, user_id, bs)
 
 
-
-mainc()
+clients = os.environ["clients"]
+for client in clients:
+    mainc(client)
