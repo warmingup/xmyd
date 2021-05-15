@@ -114,7 +114,7 @@ def bushu(app_token, user_id, bs):
     print(ss)
 
 
-def mainc(self,client):
+def mainc(client):
     print("小米运动刷步数同步到微信/支付宝")
     print("client:" + client)
     user = client.user
