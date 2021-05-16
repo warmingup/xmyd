@@ -132,6 +132,10 @@ def mainc(client):
         bushu(app_token, user_id, bs)
 
 
-clients = os.environ["clients"]
+try:
+    with open('./config.json','r') as fp:
+        clients = json.load(fp)
+except Exception as e:
+        print(str(e))
 for client in clients:
     mainc(client)
