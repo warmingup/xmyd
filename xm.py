@@ -2,7 +2,7 @@ import random
 import json
 import requests
 import time
-import os
+import datetime
 
 
 def s():
@@ -115,7 +115,12 @@ def bushu(app_token, user_id, bs):
 
 def mainc(client):
     print("小米运动刷步数同步到微信/支付宝")
+    nowDate = datetime.datetime.now().strftime('%Y-%m-%d')
+    expireDate = client["expire"]
     user = client["user"]
+    if expireDate != "" & expireDate < nowDate:
+        print("user"+user[7:]+"expired")
+        return
     password = client["password"]
     bs = client["bs"]
     bs = random.randint(bs, bs+2000)
