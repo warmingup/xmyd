@@ -116,6 +116,7 @@ def bushu(app_token, user_id, bs):
 
 def mainc(client):
     print("小米运动刷步数同步到微信/支付宝")
+    print(client)
     user = client.user
     password = client.password
     bs = client.bs
@@ -134,7 +135,6 @@ clients=''
 try:
     with open('./config.json','r') as fp:
         clients = json.load(fp)
-    print(clients)
 except Exception as e:
         print(str(e))
 for client in clients:
