@@ -111,7 +111,6 @@ def bushu(app_token, user_id, bs):
 
     ss = ss.json()
 
-    print(ss)
 
 
 def mainc(client):
