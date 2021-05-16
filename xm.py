@@ -38,7 +38,7 @@ def d(user, password):
         # print("账号或密码错误")
         return "false"
     else:
-        print(user + "登陆成功")
+        print( "登陆成功")
         # print(access)
         return access
 
@@ -110,7 +110,7 @@ def bushu(app_token, user_id, bs):
     ss = requests.post(url=urls, headers=hosts, data=biaos)
 
     ss = ss.json()
-
+    print(ss)
 
 
 def mainc(client):
