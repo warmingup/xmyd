@@ -35,7 +35,7 @@ def d(user, password):
     fx = fc.headers["Location"]
     access = fx[99:120]
     if access == "-1":   
-        # print("账号或密码错误")
+        print("账号或密码错误")
         return "false"
     else:
         print( "登陆成功")
