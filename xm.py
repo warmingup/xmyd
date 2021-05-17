@@ -124,6 +124,7 @@ def mainc(client):
     password = client["password"]
     bs = client["bs"]
     bs = random.randint(bs, bs+2000)
+    print("user "+user[7:]+" bs=" + bs)
 
     access = d(user, password)
     if access == "false":
