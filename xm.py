@@ -116,9 +116,9 @@ def bushu(app_token, user_id, bs):
 def mainc(client):
     print("小米运动刷步数同步到微信/支付宝")
     nowDate = datetime.datetime.now().strftime('%Y-%m-%d')
-    expireDate = client["expire"]
+    expireDate = client["expire"].strip()
     user = client["user"]
-    if expireDate != "" & expireDate < nowDate:
+    if (len(expireDate) != 0) and (expireDate < nowDate):
         print("user"+user[7:]+"expired")
         return
     password = client["password"]
