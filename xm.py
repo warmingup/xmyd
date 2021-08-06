@@ -123,7 +123,7 @@ def mainc(client):
         return
     password = client["password"]
     bs = client["bs"]
-    bs = random.randint(bs, bs+2000)
+    bs = random.randint(bs, bs+3000)
     print("user"+user[7:])
     print("bs=")
     print(bs)
